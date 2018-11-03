@@ -1,0 +1,26 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-card {
+  width: 30%;
+  margin: auto;
+}
+
+button {
+  margin: auto;
+  width: 100%;
+}

@@ -1,0 +1,90 @@
+
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+    <mat-tab label="Talent">
+        <mat-card>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <div class="example-container">
+              <h1>Sign Up</h1>
+              <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+                <mat-form-field>
+                      <input matInput name="name" ngModel type="text" placeholder="Full Name" #nameInput="ngModel" required>
+                      <mat-error *ngIf="nameInput.invalid">Please enter a valid name</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+                  <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required minlength="8">
+                  <mat-error *ngIf="passwordInput.invalid">Password should be atleast 8 charaters long</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="telephone" ngModel type="number" placeholder="Telephone Number" #telInput="ngModel" required>
+                    <mat-error *ngIf="telInput.invalid">Please enter a valid Telephone number.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="location" ngModel type="text" placeholder="Location" #locInput="ngModel" required>
+                    <mat-error *ngIf="locInput.invalid">Please enter a valid location.</mat-error>
+                </mat-form-field>
+                <div><button mat-raised-button color="accent" type="submit">Sign Up</button></div>
+
+              </form>
+
+            </div>
+
+          </mat-card>
+    </mat-tab>
+    <mat-tab label="Advisor">
+        <mat-card>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <div class="example-container">
+              <h1>Sign Up</h1>
+              <form (submit)="onAdvisorSignup(signupForm2)" #signupForm2="ngForm" *ngIf="!isLoading">
+                <mat-form-field>
+                      <input matInput name="name" ngModel type="text" placeholder="Full Name" #nameInput="ngModel" required>
+                      <mat-error *ngIf="nameInput.invalid">Please enter a valid name</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+                  <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required minlength="8">
+                  <mat-error *ngIf="passwordInput.invalid">password should atleast 8 characters long.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="telephone" ngModel type="number" placeholder="Telephone Number" #telInput="ngModel" required>
+                    <mat-error *ngIf="telInput.invalid">Please enter a valid Telephone number.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="location" ngModel type="text" placeholder="Location" #locInput="ngModel" required>
+                    <mat-error *ngIf="locInput.invalid">Please enter a valid location.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput name="businessRole" ngModel type="text" placeholder="Business Role" #businessInput="ngModel" required>
+                    <mat-error *ngIf="businessInput.invalid">Please enter a valid Business Role.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput name="joiningReason" ngModel type="text" placeholder="Reason to Join" #joinInput="ngModel" required >
+                    <mat-error *ngIf="joinInput.invalid">Please enter a valid Reason to join.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput name="companyName" ngModel type="text" placeholder="Company Name" #companyNameInput="ngModel" required>
+                    <mat-error *ngIf="companyNameInput.invalid">Please enter a valid Company Name.</mat-error>
+                </mat-form-field>
+
+                <div><button mat-raised-button color="accent" type="submit">Sign Up</button></div>
+
+              </form>
+
+            </div>
+
+          </mat-card>
+    </mat-tab>
+
+  </mat-tab-group>
+
+

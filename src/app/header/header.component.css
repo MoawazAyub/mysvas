@@ -1,0 +1,25 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.spacert {
+  flex: 1 auto 1;
+}
+
+.bigger-text {
+  font-size: 200%;
+
+  margin: auto;
+}

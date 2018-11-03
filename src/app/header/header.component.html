@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" >
+  <span><a class="bigger-text" [routerLink]="['/']" routerLinkActive="router-link-active"  routerLinkActive="router-link-active" >mysvas</a></span>
+  <span class="spacert">
+  <ul>
+    <li>
+      <a mat-button routerLinkActive="mat-accent" >Jobs</a>
+
+    </li>
+    <li>
+      <a  mat-button [routerLink]="['/about']" routerLinkActive="router-link-active"  routerLinkActive="mat-accent" >About Us</a>
+
+    </li>
+    <li>
+      <a mat-button routerLinkActive="mat-accent" >Profile</a>
+
+    </li>
+  </ul>
+</span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button [routerLink]="['/signup']" routerLinkActive="router-link-active"  routerLinkActive="mat-accent" >Sign up</a>
+    </li>
+    <li>
+      <a mat-button [routerLink]="['/login']" routerLinkActive="router-link-active"  routerLinkActive="mat-accent" >Login</a>
+    </li>
+  </ul>
+
+</mat-toolbar>
+
