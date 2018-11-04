@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import {MatInputModule,
@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthInterceptor } from './services/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { FooterComponent } from './footer/footer.component';
     MatProgressBarModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
