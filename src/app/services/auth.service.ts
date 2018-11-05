@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { AuthData } from './auth-data.model';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
   private token: string;
   private authStatusListner = new Subject<boolean>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getauthStatusListner() {
     return this.authStatusListner.asObservable();
