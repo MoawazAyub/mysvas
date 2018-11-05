@@ -6,13 +6,13 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  private isAuthenticated = false;
   private token: string;
   private authStatusListner = new Subject<boolean>();
 
   constructor(private http: HttpClient) {}
 
-  getauthStatusListner()
-  {
+  getauthStatusListner() {
     return this.authStatusListner.asObservable();
   }
 
@@ -35,6 +35,10 @@ export class AuthService {
     return this.token;
   }
 
+  getIsAuth() {
+    return this.isAuthenticated;
+  }
+
   login(email: string, password: string) {
     const authData: any = { email: email, password: password };
     this.http
@@ -46,9 +50,19 @@ export class AuthService {
 
         this.token = response.token;
         console.log(this.token);
-        this.authStatusListner.next(true);
+        if (this.token) {
+          this.isAuthenticated = true;
+          this.authStatusListner.next(true);
+        }
+
       });
 
+  }
+
+  LogOut() {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authStatusListner.next(false);
   }
 
 
